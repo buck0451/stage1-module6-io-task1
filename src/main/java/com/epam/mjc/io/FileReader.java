@@ -37,8 +37,6 @@ public class FileReader {
                 } else {
                     builder.append((char) next);
                     switch (builder.toString()) {
-                        default:
-                            break;
                         case "Name: ":
                             flag = Flag.NAME;
                             builder.delete(0, builder.length());
@@ -54,6 +52,8 @@ public class FileReader {
                         case "Phone: ":
                             flag = Flag.PHONE;
                             builder.delete(0, builder.length());
+                            break;
+                        default:
                             break;
                     }
                 }
